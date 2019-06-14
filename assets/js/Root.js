@@ -1,22 +1,23 @@
-import * as React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Counter from './components/Counter'
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from './components/Header'
-import HomePage from './pages'
+const Hi = () => <div>Hi</div>;
 
-export default class Root extends React.Component {
-  public render(): JSX.Element {
+const Bye = () => <div>Bye</div>;
+
+class Root extends React.Component {
+  render() {
     return (
       <>
-        <Header />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-						<Route path="/counter" component={Counter} />
+            <Route exact path="/" component={Hi} />
+            <Route path="/bye" component={Bye} />
           </Switch>
         </BrowserRouter>
       </>
-    )
+    );
   }
 }
+
+export default Root;
